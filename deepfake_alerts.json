@@ -1,0 +1,10 @@
+[
+    {
+        "timestamp": "2026-05-28 11:52:30.093917",
+        "type": "DEEPFAKE",
+        "attack": "FAKE",
+        "severity": "CRITICAL",
+        "ip": "127.0.0.1",
+        "payload": "Uploaded Image"
+    }
+]

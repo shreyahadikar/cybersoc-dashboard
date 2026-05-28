@@ -1,0 +1,18 @@
+[
+    {
+        "timestamp": "2026-05-28 11:51:56.784210",
+        "type": "PHISHING",
+        "attack": "SAFE",
+        "severity": "LOW",
+        "ip": "127.0.0.1",
+        "payload": "http://google.com"
+    },
+    {
+        "timestamp": "2026-05-28 11:52:14.874789",
+        "type": "PHISHING",
+        "attack": "SAFE",
+        "severity": "LOW",
+        "ip": "127.0.0.1",
+        "payload": "http://google-00-45.com"
+    }
+]

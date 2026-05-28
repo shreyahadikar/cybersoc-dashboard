@@ -1,0 +1,10 @@
+[
+    {
+        "timestamp": "2026-05-28 11:52:53.329868",
+        "type": "WEB",
+        "ip": "127.0.0.1",
+        "payload": "admin admin123",
+        "attack": "Normal",
+        "severity": "LOW"
+    }
+]

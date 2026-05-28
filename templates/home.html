@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>CyberGram</title>
+
+<style>
+
+body{
+    font-family: Arial;
+    background: #f5f5f5;
+}
+
+.navbar{
+    background: white;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.navbar a{
+    margin-right: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.container{
+    width: 700px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.card{
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+textarea{
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+}
+
+input[type="text"]{
+    width: 80%;
+    padding: 10px;
+}
+
+button{
+    padding: 10px 20px;
+    background: #0095f6;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.alert{
+    background: #ffe5e5;
+    color: red;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.comment{
+    margin-top: 10px;
+    padding: 10px;
+    background: #f0f0f0;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+    <a href="/home">Home</a>
+
+    <a href="/profile">Profile</a>
+
+    <a href="/logout">Logout</a>
+
+</div>
+
+<div class="container">
+
+    <!-- {% if result %}
+
+    <div class="alert">
+
+        <strong>Attack:</strong>
+
+        {{ result.attack }}
+
+        <br>
+
+        <strong>Severity:</strong>
+
+        {{ result.severity }}
+
+    </div>
+
+    {% endif %} -->
+
+
+
+    <!-- CREATE POST -->
+
+    <div class="card">
+
+        <h2>Create Post</h2>
+
+        <form method="POST" action="/home">
+
+            <textarea
+                name="post"
+                placeholder="What's happening?"
+                required></textarea>
+
+            <br><br>
+
+            <button type="submit">
+                Post
+            </button>
+
+        </form>
+
+    </div>
+
+    <!-- POSTS -->
+
+    {% for post in posts %}
+
+    <div class="card">
+
+        <h3>@admin</h3>
+
+        <p>{{ post }}</p>
+
+        <!-- COMMENT -->
+
+        <form method="POST" action="/comment">
+
+            <input type="text"
+                   name="comment"
+                   placeholder="Write comment"
+                   required>
+
+            <button type="submit">
+                Comment
+            </button>
+
+        </form>
+
+    </div>
+
+    {% endfor %}
+
+    <!-- COMMENTS -->
+
+    {% for comment in comments %}
+
+    <div class="comment">
+
+        <strong>Comment:</strong>
+
+        {{ comment }}
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+</body>
+
+</html>

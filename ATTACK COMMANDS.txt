@@ -1,0 +1,84 @@
+TEST 1 — SSH BRUTE FORCE
+Invoke-RestMethod `
+-Uri "http://127.0.0.1:5000/network_predict" `
+-Method POST `
+-Headers @{"Content-Type"="application/json"} `
+-Body '{
+"packets":99999,
+"bytes":9999999,
+"duration":99999,
+"dst_port":22
+}'
+
+FTP BRUTE FORCE
+Invoke-RestMethod `
+-Uri "http://127.0.0.1:5000/network_predict" `
+-Method POST `
+-Headers @{"Content-Type"="application/json"} `
+-Body '{
+"packets":9000,
+"bytes":999999,
+"duration":500,
+"dst_port":21
+}'
+
+Expected:
+
+network_attack
+--------------
+Brute Force
+
+BOT ATTACK
+Invoke-RestMethod `
+-Uri "http://127.0.0.1:5000/network_predict" `
+-Method POST `
+-Headers @{"Content-Type"="application/json"} `
+-Body '{
+"packets":88888,
+"bytes":9999999,
+"duration":77777,
+"dst_port":80
+}'
+
+TEST 3 — NORMAL TRAFFIC
+Invoke-RestMethod `
+-Uri "http://127.0.0.1:5000/network_predict" `
+-Method POST `
+-Headers @{"Content-Type"="application/json"} `
+-Body '{
+"packets":10,
+"bytes":1000,
+"duration":20,
+"dst_port":443
+}'
+
+Expected:
+
+Normal
+
+INFILTERATION:
+Invoke-RestMethod `
+-Uri "http://127.0.0.1:5000/network_predict" `
+-Method POST `
+-Headers @{"Content-Type"="application/json"} `
+-Body '{
+"packets":100,
+"bytes":5000,
+"duration":20000,
+"dst_port":443
+}'
+
+
+
+Command injection
+
+127.0.0.1 && whoami
+
+OR:
+
+localhost ; ls
+
+Expected:
+
+Attack: COMMAND_INJECTION
+Severity: CRITICAL
