@@ -1,12 +1,13 @@
 --extra-index-url https://download.pytorch.org/whl/cpu
+
 Flask
 gunicorn
+flask-cors
 scikit-learn
 xgboost
-torch==2.2.2
-torchvision==0.17.2
-flask-cors
-pillow
-numpy
+numpy==1.26.4
 scipy
 joblib
+pillow
+torch==2.2.2
+torchvision==0.17.2
