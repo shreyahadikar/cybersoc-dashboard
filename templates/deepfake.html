@@ -900,7 +900,7 @@ RESPONSIVE
 </div>
 </div>
 
-<script>
+<!-- <script>
     function showFileName(){
 
     const input = document.getElementById("deepfakeImage");
@@ -978,6 +978,161 @@ async function scanDeepfake(){
     `;
 }
 
+</script> -->
+
+<script>
+
+function showFileName(){
+
+    const input =
+        document.getElementById(
+            "deepfakeImage"
+        );
+
+    const fileText =
+        document.getElementById(
+            "selectedFile"
+        );
+
+    const preview =
+        document.getElementById(
+            "previewImage"
+        );
+
+    if(input.files.length > 0){
+
+        const file = input.files[0];
+
+        fileText.innerHTML =
+            "Selected: " + file.name;
+
+        const reader = new FileReader();
+
+        reader.onload = function(e){
+
+            preview.src = e.target.result;
+
+            preview.style.display = "block";
+        };
+
+        reader.readAsDataURL(file);
+
+    }
+
+    else{
+
+        fileText.innerHTML =
+            "No image selected";
+
+        preview.style.display =
+            "none";
+    }
+}
+
+async function scanDeepfake(){
+
+    const fileInput =
+        document.getElementById(
+            "deepfakeImage"
+        );
+
+    const file =
+        fileInput.files[0];
+
+    if(!file){
+
+        alert("Select image");
+
+        return;
+    }
+
+    const formData =
+        new FormData();
+
+    formData.append(
+        "image",
+        file
+    );
+
+    try{
+
+        const response =
+            await fetch(
+
+                "/deepfake_predict",
+
+                {
+
+                    method:"POST",
+
+                    body:formData
+                }
+            );
+
+        const data =
+            await response.json();
+
+        // ==========================
+        // ERROR HANDLING
+        // ==========================
+
+        if(data.error){
+
+            document.getElementById(
+                "deepfakeResult"
+            ).innerHTML = `
+
+                <span style="
+                    color:red;
+                    font-size:18px;
+                ">
+                    ERROR:
+                    ${data.error}
+                </span>
+
+            `;
+
+            return;
+        }
+
+        // ==========================
+        // SUCCESS
+        // ==========================
+
+        document.getElementById(
+            "deepfakeResult"
+        ).innerHTML = `
+
+            Detection:
+            <span class="${data.severity}">
+                ${data.attack}
+            </span>
+
+        `;
+
+    }
+
+    catch(error){
+
+        document.getElementById(
+            "deepfakeResult"
+        ).innerHTML = `
+
+            <span style="
+                color:red;
+                font-size:18px;
+            ">
+                Request Failed
+            </span>
+
+        `;
+
+        console.log(error);
+    }
+}
+
 </script>
+
+
 </body>
 </html>
