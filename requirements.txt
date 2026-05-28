@@ -1,9 +1,10 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
 Flask
 gunicorn
 scikit-learn
 xgboost
-torch
-torchvision
+torch==2.2.2
+torchvision==0.17.2
 flask-cors
 pillow
 numpy
