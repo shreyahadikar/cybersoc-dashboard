@@ -50,7 +50,9 @@ deepfake_model.load_state_dict(
     )
 )
 
+
 deepfake_model.eval()
+deepfake_model.cpu()
 
 # =====================================================
 # IMAGE TRANSFORM
@@ -612,6 +614,7 @@ def deepfake_predict():
         image = deepfake_transform(image)
 
         image = image.unsqueeze(0)
+        image = image.cpu()
 
         with torch.no_grad():
 
