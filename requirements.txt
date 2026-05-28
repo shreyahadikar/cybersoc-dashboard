@@ -1,9 +1,11 @@
 Flask
-flask-cors
 gunicorn
-joblib
 scikit-learn
+xgboost
 torch
 torchvision
+flask-cors
 pillow
 numpy
+scipy
+joblib
