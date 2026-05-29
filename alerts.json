@@ -294,5 +294,29 @@
         "payload": "admin'1 --",
         "attack": "SQL_INJECTION",
         "severity": "CRITICAL"
+    },
+    {
+        "timestamp": "2026-05-29 18:59:13.305297",
+        "type": "WEB",
+        "ip": "127.0.0.1",
+        "payload": "admin admin123",
+        "attack": "Normal",
+        "severity": "LOW"
+    },
+    {
+        "timestamp": "2026-05-29 18:59:37.461562",
+        "type": "WEB",
+        "ip": "127.0.0.1",
+        "payload": "<script></script>",
+        "attack": "XSS",
+        "severity": "HIGH"
+    },
+    {
+        "timestamp": "2026-05-29 19:02:40.010685",
+        "type": "WEB",
+        "ip": "127.0.0.1",
+        "payload": "admin 1--",
+        "attack": "SQL_INJECTION",
+        "severity": "CRITICAL"
     }
 ]
