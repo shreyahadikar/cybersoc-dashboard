@@ -1,10 +1,8 @@
----
-title: Cybersoc Dashboard
-emoji: 🐨
-colorFrom: red
-colorTo: blue
-sdk: docker
-pinned: false
----
+# CyberSOC Dashboard
 
-Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
+AI-powered Cybersecurity Dashboard
+
+- Phishing Detection
+- Network Intrusion Detection
+- Deepfake Detection
+- Security Alerts Dashboard
