@@ -14,13 +14,13 @@ Cyber threats are becoming increasingly sophisticated, making traditional rule-b
 
 CyberSOC Dashboard aims to provide a centralized environment where security analysts can:
 
-- 🔍 Detect suspicious phishing URLs and messages
-- 🌐 Monitor network traffic for intrusion attempts
-- 🎭 Identify potentially manipulated or AI-generated media
-- 🚨 Monitor and investigate security alerts
-- 🤖 Use AI/ML models to assist threat detection
-- 📊 Visualize cybersecurity events in real time
-- 🛡️ Improve security incident awareness and response
+- Detect suspicious phishing URLs and messages
+- Monitor network traffic for intrusion attempts
+- Identify potentially manipulated or AI-generated media
+- Monitor and investigate security alerts
+- Use AI/ML models to assist threat detection
+- Visualize cybersecurity events in real time
+- Improve security incident awareness and response
 
 The system is designed with a modular architecture so that additional cybersecurity detection models can be integrated in the future.
 
